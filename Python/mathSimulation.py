@@ -29,17 +29,15 @@ def updateGS(U, V, Du, Dv, F, k, dt):
 
 def updateFN(U, V, Du, Dv, F, k, dt):
     """Update using the FitzHugh-Nagumo model."""
-    # Reaction-diffusion equations of the gray-scott model
-    # dU/dt = Du² * Laplacian(U) + f(U)- \sigma * V
-    # \tau dV/dt = Dv² * Laplacian(V) + U - V
-
-    
     tau = 0.01
     kappa = 0.01
     lambda_u = 0.08
     sigma = 0.5
 
     f_u = lambda_u*U - U**3 - kappa
+    # Reaction-diffusion equations of the gray-scott model
+    # dU/dt = Du² * Laplacian(U) + f(U)- \sigma * V
+    # \tau dV/dt = Dv² * Laplacian(V) + U - V
     Lu = laplacian(U)
     Lv = laplacian(V)
 

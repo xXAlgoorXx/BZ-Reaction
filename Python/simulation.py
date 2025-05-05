@@ -37,7 +37,7 @@ arr = np.random.random(size=(2, 3, ny, nx))
 fig, ax = plt.subplots()
 im = ax.imshow(arr[0,0], cmap=plt.cm.winter)
 ax.axis('off')
-#===============#
+# ===============#
 # 2 Color
 def animate(i, arr):
     """Update the image for iteration i of the Matplotlib animation."""
@@ -46,7 +46,7 @@ def animate(i, arr):
     im.set_array(arr[i % 2, 0])
     return [im]
 
-# #===============#
+# # #===============#
 # # 3 Colors
 # def animate(i, arr):
 #     arr = update(i % 2, arr)
@@ -57,8 +57,8 @@ def animate(i, arr):
 #     im.set_array(rgb)
 #     return [im]
 
-# # Initialize the image with an RGB array
-# im = ax.imshow(np.stack([arr[0, 0], arr[0, 1], arr[0, 2]], axis=-1))
+# Initialize the image with an RGB array
+im = ax.imshow(np.stack([arr[0, 0], arr[0, 1], arr[0, 2]], axis=-1))
 # #===============#
 
 anim = animation.FuncAnimation(fig, animate, frames=200, interval=5,
